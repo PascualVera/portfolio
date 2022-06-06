@@ -1,0 +1,5 @@
+<nav class="navbar">
+  <div class="link_container" *ngFor="let link of this.links; let i = index">
+    <a class="link" (click)="navigate(i)">{{ link }}</a>
+  </div>
+</nav>

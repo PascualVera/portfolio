@@ -1,0 +1,14 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  background-color: black;
+}
+.cube {
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
