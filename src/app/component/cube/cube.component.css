@@ -1,61 +1,74 @@
 .cube {
-  width: 90vh;
-  height: 90vh;
+  width: 20vh;
+  height: 20vh;
   position: relative;
   transform-style: preserve-3d;
-  transform: rotateX(-10deg) rotateY(-10deg);
+  transform: rotateX(-30deg) rotateY(-30deg);
   transition: all 0.5s linear;
+  animation: rotate 20s infinite linear;
 }
 
 .cube.show-front {
-  transform: translateZ(-45vh) rotateY(0deg);
+  transform: translateZ(-3vh) rotateY(0deg);
 }
 .cube.show-right {
-  transform: translateZ(-45vh) rotateY(-90deg);
+  transform: translateZ(-3vh) rotateY(-90deg);
 }
 .cube.show-back {
-  transform: translateZ(-45vh) rotateY(-180deg);
+  transform: translateZ(-3vh) rotateY(-180deg);
 }
 .cube.show-left {
-  transform: translateZ(-45vh) rotateY(90deg);
+  transform: translateZ(-3vh) rotateY(90deg);
 }
 .cube.show-top {
-  transform: translateZ(-45vh) rotateX(-90deg);
+  transform: translateZ(-3vh) rotateX(-90deg);
 }
 .cube.show-bottom {
-  transform: translateZ(-45vh) rotateX(90deg);
+  transform: translateZ(-3vh) rotateX(90deg);
 }
 
 .cube__face {
   position: absolute;
-  width: 90vh;
-  height: 90vh;
-
-  box-shadow: 0 0 1vh #fff, 0 0 1vh #fff, 0 0 2vh #bc13fe, 0 0 2vh #bc13fe,
-    0 0 4vh #bc13fe, inset 0 0 4vh #bc13fe;
+  width: 20vh;
+  height: 20vh;
+  border-radius: 100%;
+  box-shadow: 0 0 1vh #fff, 0 0 1vh #fff inset, 0 0 2vh var(--neon),
+    0 0 2vh var(--neon), 0 0 4vh var(--neon), inset 0 0 4vh var(--neon);
 }
 
 .cube__face--front {
-  transform: rotateY(0deg) translateZ(45vh);
-  background: #0b49bd75;
+  transform: rotateY(0deg) translateZ(3vh);
+  background: #0b49bd15;
 }
 .cube__face--right {
-  transform: rotateY(90deg) translateZ(45vh);
-  background: #93c8c475;
+  transform: rotateY(90deg) translateZ(3vh);
+  /* background: #93c8c475; */
 }
 .cube__face--back {
-  transform: rotateY(180deg) translateZ(45vh);
-  background: #072c9475;
+  transform: rotateY(180deg) translateZ(3vh);
+  /* background: #072c9475; */
 }
 .cube__face--left {
-  transform: rotateY(-90deg) translateZ(45vh);
-  background: #de41cd75;
+  transform: rotateY(-90deg) translateZ(3vh);
+  /* background: #de41cd75; */
 }
 .cube__face--top {
-  transform: rotateX(90deg) translateZ(45vh);
-  background: #b16eb575;
+  transform: rotateX(90deg) translateZ(3vh);
+  /* background: #b16eb575; */
 }
 .cube__face--bottom {
-  transform: rotateX(-90deg) translateZ(45vh);
-  background: #2c2e3b75;
+  transform: rotateX(-90deg) translateZ(3vh);
+  /* background: #2c2e3b75; */
+}
+.container_cube {
+  opacity: 1;
+  z-index: 0;
+}
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(359deg) rotateY(359deg);
+  }
 }

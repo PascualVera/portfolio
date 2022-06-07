@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CubeComponent } from 'src/app/component/cube/cube.component';
 
 @Component({
   selector: 'app-body',

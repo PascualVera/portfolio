@@ -7,8 +7,23 @@
 }
 .cube {
   position: absolute;
-  margin: auto;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
+  right: 10vh;
+  top: 10vh;
+}
+.background {
+  position: absolute;
+  transform: scale(10);
+  opacity: 0.1;
+}
+.navbar {
+  z-index: 1;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(359deg) rotateY(359deg);
+  }
 }

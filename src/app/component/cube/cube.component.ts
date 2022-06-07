@@ -14,11 +14,18 @@ export class CubeComponent implements OnInit {
   }
   styleObject(): object {
     if (this.portfolio.section == 'About') {
-      return { transform: 'rotateX(-10deg) rotateY(-10deg)' };
+      document.documentElement.style.setProperty('--neon', '#bc13fe');
+      return { transform: 'rotateX(-30deg) rotateY(-30deg)' };
     } else if (this.portfolio.section == 'Skills') {
-      return { transform: 'rotateX(-10deg) rotateY(-100deg)' };
+      document.documentElement.style.setProperty('--neon', '#93c8c4');
+      return { transform: 'rotateX(-70deg) rotateY(-140deg)' };
     } else if (this.portfolio.section == 'Works') {
-      return { transform: 'rotateX(-10deg) rotateY(-190deg)' };
+      document.documentElement.style.setProperty('--neon', '#0b49bd');
+      return { transform: 'rotateX(-10deg) rotateY(-150deg)' };
+    } else if (this.portfolio.section == 'Contact') {
+      return {
+        transform: 'scale(0.1)',
+      };
     } else {
       return {};
     }
