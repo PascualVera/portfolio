@@ -1,7 +1,7 @@
 .header {
 	font-family: var(--primary-font);
 	color: whitesmoke;
-	height: 92vh;
+	height: 100vh;
 	display: flex;
 	justify-content: space-around;
 	padding-top: 140px;
