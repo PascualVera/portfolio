@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+
+:root {
+	/*Colors*/
+	--darkgreen: #1b2536;
+	--greygreen: #536869;
+	--bluegreen: #31414e;
+	--highlightgreen: #8eaa90;
+	--green: #738c7f;
+	/*Fonts*/
+	--primary-font: "Roboto Slab", serif;
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+::-webkit-scrollbar {
+	width: 15px;
+	cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--highlightgreen);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--darkgreen);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+::-webkit-scrollbar-thumb:hover {
+	background: var(--greygreen);
 }

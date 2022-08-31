@@ -1,0 +1,32 @@
+.header {
+	font-family: var(--primary-font);
+	color: whitesmoke;
+	height: 92vh;
+	display: flex;
+	justify-content: space-around;
+	padding-top: 140px;
+}
+.about_wrapper {
+	width: 500px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	gap: 50px;
+}
+.title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 20px;
+}
+.title h1 {
+	font-size: 4rem;
+	letter-spacing: 3px;
+}
+.title h2 {
+	font-size: 1.7rem;
+}
+.about {
+	font-size: 1.2rem;
+	line-height: 35px;
+}

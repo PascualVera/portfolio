@@ -1,0 +1,19 @@
+.conway {
+	display: grid;
+	grid-template-columns: repeat(15, 60px);
+	grid-template-rows: repeat(15, 60px);
+	width: max-content;
+	height: max-content;
+}
+.alive {
+	width: 50px;
+	height: 50px;
+	background: var(--darkgreen);
+	transition: background 1s;
+}
+.dead {
+	width: 50px;
+	height: 50px;
+	background: var(--bluegreen);
+	transition: background 1s;
+}
