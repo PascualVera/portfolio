@@ -1,18 +1,20 @@
 import "./LatestProject.css";
+import pulsar from "../../assets/4demons.svg";
 export default function LatestProject() {
 	return (
 		<article className="latest_project_wrapper">
-			<h2 className="latest_project_title">Latest Project</h2>
+			<div className="latest_project_title_wrapper">
+				<h2>Latest Project</h2>
+				<h3>Personal Portfolio</h3>
+			</div>
+
 			<div className="project">
 				<figure className="img_wrapper">
-					<div></div>
+					<img src={pulsar} className="pulsar_svg"></img>
 				</figure>
 				<div className="description">
 					<p className="text_description">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum atque
-						dicta laudantium perspiciatis officia unde impedit voluptatum vel
-						corporis? Expedita ut maxime exercitationem in dicta cumque, nostrum
-						temporibus laudantium quis?
+						This is my personal portfolio, is made with ReactJS and pure CSS.
 					</p>
 					<a>View code</a>
 				</div>

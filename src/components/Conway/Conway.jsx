@@ -70,7 +70,7 @@ export default function Conway() {
 				});
 				return next;
 			});
-		}, 5000);
+		}, 2000);
 		console.log(rows, cols);
 		return () => clearInterval(interval);
 	}, []);

@@ -1,15 +1,24 @@
 .navbar {
-	margin: 0px;
 	height: 8vh;
 	position: sticky;
 	top: 0;
 	backdrop-filter: blur(20px);
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-end;
 	align-items: center;
+	padding-right: 5vh;
 	background: var(--darkgreen);
+	z-index: 1;
 }
-.navbar p {
-	color: white;
-	font-size: 2rem;
+.links_wrapper {
+	display: flex;
+	color: whitesmoke;
+	font-size: 1.4rem;
+	width: 20vw;
+	justify-content: space-between;
+}
+.links_wrapper p:hover {
+	color: var(--highlightgreen);
+	filter: brightness(1.5);
+	text-shadow: 0px 0px 2px var(--highlightgreen);
 }

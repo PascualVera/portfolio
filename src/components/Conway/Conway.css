@@ -12,17 +12,16 @@
 .alive {
 	width: 100%;
 	height: 100%;
-	background: var(--darkgreen);
-	opacity: 0.5;
-	transition: background 0.5s ease-in;
-	box-shadow: 10px -10px 10px var(--highlightgreen);
-	border: 1px solid var(--bluegreen);
+
+	opacity: 1;
+	transition: all 2s linear;
+	box-shadow: 10px -10px 15px 0px var(--highlightgreen);
 }
 .dead {
 	width: 100%;
 	height: 100%;
 	background: var(--highlightgreen);
-	transition: background 0.5s ease-in;
-	box-shadow: 10px -10px 5px 5px var(--highlightgreen);
-	border: 1px solid var(--highlightgreen);
+	opacity: 0.8;
+	transition: all 2s linear;
+	box-shadow: 10px -10px 15px 0px var(--highlightgreen);
 }
