@@ -6,7 +6,9 @@
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
+	backdrop-filter: blur(10px);
 }
+
 .latest_project_title {
 	font-size: 2rem;
 }

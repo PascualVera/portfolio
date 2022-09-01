@@ -6,11 +6,9 @@ import Conway from "../components/Conway/Conway";
 export default function Main() {
 	return (
 		<main className="container">
-			<article className="header_wrapper">
-				<Navbar />
-				<Header />
-			</article>
+			<article className="header_wrapper"></article>
 			<Conway />
+			<div className="div"></div>
 		</main>
 	);
 }

@@ -15,7 +15,9 @@ export default function Header() {
 				</div>
 				<p className="about"></p>
 			</div>
-			<LatestProject />
+			<div className="latest_proyect_wrapper">
+				<LatestProject />
+			</div>
 		</header>
 	);
 }
