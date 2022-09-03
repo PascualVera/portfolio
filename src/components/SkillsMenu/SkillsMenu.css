@@ -1,0 +1,22 @@
+.skill_menu {
+	width: 60vw;
+	height: 92vh;
+	background-color: var(--darkgreen);
+	display: flex;
+	flex-wrap: wrap;
+	gap: 50px;
+	padding-left: 30px;
+}
+.skill_logo_wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	justify-content: center;
+	align-items: center;
+}
+.skill_logo_wrapper h3 {
+	color: whitesmoke;
+}
+.img {
+	width: 220px;
+}

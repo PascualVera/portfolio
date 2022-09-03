@@ -48,7 +48,9 @@
 	color: white;
 	cursor: pointer;
 	text-decoration: none;
+	transition: color 0.2s;
 }
 .social_contact a :hover > * {
-	color: var(--green);
+	color: var(--highlightgreen);
+	filter: brightness(1.2);
 }

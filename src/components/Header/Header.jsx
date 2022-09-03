@@ -11,7 +11,6 @@ export default function Header() {
 				<div className="title">
 					<h1>Pascual Vera</h1>
 					<h2>Junior Full Stack Developer</h2>
-					<a>CV</a>
 					<div className="social_contact">
 						<a href="https://www.linkedin.com/in/pascualvera/">
 							<BsLinkedin />

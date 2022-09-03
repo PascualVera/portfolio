@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./Conway.css";
 export default function Conway() {
 	//******************//
+	//CONWAY SCHEMA//
 	const schema = [
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
@@ -30,27 +31,28 @@ export default function Conway() {
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	];
-	const cols = schema[0].length;
-	const rows = schema.length;
-
-	const positions = [
-		[0, 1],
-		[0, -1],
-		[1, -1],
-		[-1, 1],
-		[1, 1],
-		[-1, -1],
-		[1, 0],
-		[-1, 0],
-	];
 	//******************//
+	//******************//
+
 	const [grid, setGrid] = useState(schema);
 
 	useEffect(() => {
+		const cols = schema[0].length;
+		const rows = schema.length;
+		const positions = [
+			[0, 1],
+			[0, -1],
+			[1, -1],
+			[-1, 1],
+			[1, 1],
+			[-1, -1],
+			[1, 0],
+			[-1, 0],
+		];
 		const interval = setInterval(() => {
 			setGrid(g => {
 				const next = g.map((row, i) => {
-					return row.map((cell, j) => {
+					return row.map((_cell, j) => {
 						let sum = 0;
 						positions.forEach(position => {
 							const x = i + position[0];
@@ -73,13 +75,13 @@ export default function Conway() {
 		}, 2000);
 		console.log(rows, cols);
 		return () => clearInterval(interval);
-	}, []);
+	});
 
 	return (
 		<div className="conway">
 			{grid &&
 				grid.map((rows, i) =>
-					rows.map((cols, k) => (
+					rows.map((_cols, k) => (
 						<div className={grid[i][k] ? "dead" : "alive"} />
 					))
 				)}
