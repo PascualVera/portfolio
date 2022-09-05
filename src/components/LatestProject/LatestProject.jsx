@@ -14,7 +14,8 @@ export default function LatestProject() {
 				</figure>
 				<div className="description">
 					<p className="text_description">
-						This is my personal portfolio, built with ReactJS and pure CSS.
+						This is my personal portfolio, built with <strong>ReactJS</strong> ,
+						CSS (Grid and Flexbox) and custom SVG images.
 					</p>
 					<a className="link" href="https://github.com/PascualVera/portfolio">
 						View code

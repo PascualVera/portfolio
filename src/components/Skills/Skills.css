@@ -1,3 +1,7 @@
 .skills_wrapper {
 	height: 92vh;
+	background-color: var(--darkgreen);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
 }
