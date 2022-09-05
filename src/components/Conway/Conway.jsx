@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+
 import "./Conway.css";
+
 export default function Conway() {
 	//******************//
 	//CONWAY SCHEMA//
@@ -73,7 +75,7 @@ export default function Conway() {
 				return next;
 			});
 		}, 2000);
-		console.log(rows, cols);
+
 		return () => clearInterval(interval);
 	});
 

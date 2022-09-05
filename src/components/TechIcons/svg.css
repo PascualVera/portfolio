@@ -1,0 +1,18 @@
+.logo_fill_hover {
+	fill: white;
+	transition: fill 0.2s;
+}
+.logo_stroke_hover {
+	stroke: whitesmoke;
+	transition: stroke 0.2s;
+}
+.logo_fill {
+	fill: var(--green);
+	filter: brightness(0.7);
+	transition: fill 0.2s;
+}
+.logo_stroke {
+	stroke: var(--green);
+	filter: brightness(0.7);
+	transition: stroke 0.2s;
+}

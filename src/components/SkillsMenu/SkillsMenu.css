@@ -1,22 +1,27 @@
 .skill_menu {
-	width: 60vw;
+	width: 50vw;
 	height: 92vh;
 	background-color: var(--darkgreen);
-	display: flex;
-	flex-wrap: wrap;
-	gap: 50px;
-	padding-left: 30px;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: center;
+	align-items: center;
+	padding: 40px;
+	grid-gap: 30px;
 }
-.skill_logo_wrapper {
+.logo_wrapper {
 	display: flex;
 	flex-direction: column;
 	gap: 20px;
-	justify-content: center;
-	align-items: center;
 }
-.skill_logo_wrapper h3 {
-	color: whitesmoke;
+.logo_title {
+	color: aliceblue;
+	text-align: center;
 }
-.img {
-	width: 220px;
+
+.logo {
+	justify-items: center;
+	min-width: 0;
+	min-height: 0;
+	cursor: pointer;
 }

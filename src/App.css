@@ -10,6 +10,9 @@
 	/*Fonts*/
 	--primary-font: "Roboto Slab", serif;
 }
+svg {
+	color: aliceblue;
+}
 * {
 	box-sizing: border-box;
 	padding: 0;
