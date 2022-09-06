@@ -2,24 +2,37 @@
 	height: 8vh;
 	position: sticky;
 	top: 0;
-	backdrop-filter: blur(20px);
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	padding-right: 5vh;
 	background: var(--darkgreen);
 	z-index: 1;
 }
 .links_wrapper {
 	display: flex;
 	color: whitesmoke;
-	font-size: 1.2vw;
-	width: 20vw;
-	justify-content: space-between;
-	cursor: pointer;
+	font-weight: bold;
 }
-.links_wrapper p:hover {
-	color: var(--highlightgreen);
-	filter: contrast(2);
-	text-shadow: 0px 0px 2px var(--highlightgreen);
+
+.link {
+	padding: 1vw;
+	color: whitesmoke;
+	background: none;
+	font-size: 1.2vw;
+	letter-spacing: 0.05vw;
+	cursor: pointer;
+	border: none;
+	font-weight: bold;
+	border-radius: 0;
+}
+.link_active {
+	border-radius: 0;
+	padding: 1vw;
+	color: black;
+	background-color: var(--highlightgreen);
+	font-size: 1.2vw;
+	letter-spacing: 0.05vw;
+	cursor: pointer;
+	border: none;
+	font-weight: bold;
 }

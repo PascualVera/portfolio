@@ -45,16 +45,15 @@ export default function Projects() {
 			<div className="projects_wrapper">
 				{mainProjects.map(({ name, url, img, description }) => {
 					return (
-						<div className="project_item">
+						<a href={url} className="project_item">
 							<figure className="project_image_wrapper">
 								<img src={img} alt={name} />
 							</figure>
 							<h3 className="project_description_wrapper">
-								<h3>{name}</h3>
 								<p className="project_description">{description}</p>
-								<a href={url}>Link to code</a>
+								<h3>{name}</h3>
 							</h3>
-						</div>
+						</a>
 					);
 				})}
 			</div>
