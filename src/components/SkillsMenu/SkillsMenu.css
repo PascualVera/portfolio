@@ -26,8 +26,9 @@
 	cursor: pointer;
 }
 .logo_title {
-	color: aliceblue;
+	color: whitesmoke;
 	text-align: center;
+	font-size: 1.2vw;
 }
 
 .logo {

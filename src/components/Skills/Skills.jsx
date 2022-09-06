@@ -11,10 +11,9 @@ export default function Skills() {
 				<section className="about_me_text">
 					<p>My name is Pascual Vera, full-stack developer placed in Coruña.</p>
 					<p>
-						I consider myself a <strong>self-taught </strong> person, curious,
+						I consider myself a <strong>self-taught</strong> person, curious,
 						used to teamwork and always looking for new learning.
 					</p>
-
 					<p>
 						I would love to be part of a project that allows me to leave my mark
 						on the web and continue to develop professionally.
