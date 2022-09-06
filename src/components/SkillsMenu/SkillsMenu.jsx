@@ -8,21 +8,26 @@ import TypescriptSvg from "../TechIcons/typescript";
 import Mongo from "../TechIcons/mongodb";
 import Git from "../TechIcons/Git";
 import NodeSVG from "../TechIcons/Node";
+import SkillDetail from "../SkillDetail/SkillDetail";
 
 export default function SkillMenu() {
 	const [currentIcon, setCurrentIcon] = useState("Angular");
-
+	function getIcon() {
+		for (const icon of logos) {
+			if (icon.name === currentIcon) {
+				return { icon: icon.component, content: icon.content };
+			}
+		}
+	}
 	const classNames = {
 		base: { fill: "logo_fill", stroke: "logo_stroke" },
 		active: { fill: "logo_fill_hover", stroke: "logo_stroke_hover" },
 	};
-	function handleCurrentIcon(e) {
-		setCurrentIcon(e);
-	}
+
 	const logos = [
 		{
 			name: "Angular",
-			path: (
+			component: (
 				<Angular
 					colorFill={
 						currentIcon === "Angular"
@@ -36,10 +41,20 @@ export default function SkillMenu() {
 					}
 				/>
 			),
+			content: [
+				"Directives",
+				"Modules",
+				"Servicies",
+				"Observables",
+				"Interfaces",
+				"Routing",
+				"Pipes",
+				"CRUD",
+			],
 		},
 		{
 			name: "React",
-			path: (
+			component: (
 				<ReactSvg
 					colorFill={
 						currentIcon === "React"
@@ -53,10 +68,11 @@ export default function SkillMenu() {
 					}
 				/>
 			),
+			content: ["NextJS", "Hooks", "State", "Lazy loading", "Routing", "CRUD"],
 		},
 		{
 			name: "JavaScript",
-			path: (
+			component: (
 				<JavaScriptSVG
 					colorFill={
 						currentIcon === "JavaScript"
@@ -65,10 +81,16 @@ export default function SkillMenu() {
 					}
 				/>
 			),
+			content: [
+				"Event-handling",
+				"Asyncrony (async/await, promises)",
+				"OOP",
+				"Functional programming",
+			],
 		},
 		{
 			name: "TypeScript",
-			path: (
+			component: (
 				<TypescriptSvg
 					colorFill={
 						currentIcon === "TypeScript"
@@ -77,10 +99,12 @@ export default function SkillMenu() {
 					}
 				/>
 			),
+			content: ["Interfaces", "Typing", "OOP", "Functional programming"],
 		},
+
 		{
 			name: "MySql",
-			path: (
+			component: (
 				<MySql
 					colorFill={
 						currentIcon === "MySql"
@@ -89,10 +113,11 @@ export default function SkillMenu() {
 					}
 				/>
 			),
+			content: ["Querys", "Schemas"],
 		},
 		{
 			name: "MongoDB",
-			path: (
+			component: (
 				<Mongo
 					colorFill={
 						currentIcon === "MongoDB"
@@ -106,10 +131,11 @@ export default function SkillMenu() {
 					}
 				/>
 			),
+			content: ["Querys", "Schemas", "Validators"],
 		},
 		{
 			name: "Node",
-			path: (
+			component: (
 				<NodeSVG
 					colorFill={
 						currentIcon === "Node"
@@ -123,46 +149,30 @@ export default function SkillMenu() {
 					}
 				/>
 			),
+			content: ["Express.js", "WebSockets", "JWT", "API keys", "REST"],
 		},
-		//Need to FIX svg
-		// {
-		// 	name: "Git",
-		// 	path: (
-		// 		<Git
-		// 			colorFill={
-		// 				currentIcon === "Git"
-		// 					? classNames.active.fill
-		// 					: classNames.base.fill
-		// 			}
-		// 			colorStroke={
-		// 				currentIcon === "Git"
-		// 					? classNames.active.stroke
-		// 					: classNames.base.stroke
-		// 			}
-		// 		/>
-		// 	),
-		// },
 	];
 
 	return (
 		<article className="skill_menu">
-			{logos.map(e => {
-				return (
-					<div className="logo_wrapper">
-						{" "}
+			<SkillDetail svgComponent={getIcon().icon} content={getIcon().content} />
+			<div className="menu_wrapper">
+				{logos.map(e => {
+					return (
 						<div
-							className="logo"
 							onClick={() => {
-								handleCurrentIcon(e.name);
+								setCurrentIcon(e.name);
 							}}
 							key={e.name}
+							className="logo_wrapper"
 						>
-							{e.path}
+							{" "}
+							<div className="logo">{e.component}</div>
+							<h2 className="logo_title">{e.name}</h2>
 						</div>
-						<h2 className="logo_title">{e.name}</h2>
-					</div>
-				);
-			})}
+					);
+				})}
+			</div>
 		</article>
 	);
 }

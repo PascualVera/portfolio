@@ -13,9 +13,10 @@
 .links_wrapper {
 	display: flex;
 	color: whitesmoke;
-	font-size: 1.4rem;
+	font-size: 1.2vw;
 	width: 20vw;
 	justify-content: space-between;
+	cursor: pointer;
 }
 .links_wrapper p:hover {
 	color: var(--highlightgreen);

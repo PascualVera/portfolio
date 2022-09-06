@@ -2,17 +2,29 @@
 	width: 50vw;
 	height: 92vh;
 	background-color: var(--darkgreen);
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+	padding: 2vw;
+}
+.menu_wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3vw;
 	justify-content: center;
 	align-items: center;
-	padding: 40px;
-	grid-gap: 30px;
 }
 .logo_wrapper {
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	flex-direction: column;
+	height: max-content;
+	width: max-content;
 	gap: 20px;
+	cursor: pointer;
 }
 .logo_title {
 	color: aliceblue;
@@ -21,7 +33,6 @@
 
 .logo {
 	justify-items: center;
-	min-width: 0;
+	width: 6vw;
 	min-height: 0;
-	cursor: pointer;
 }
