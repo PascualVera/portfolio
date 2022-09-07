@@ -4,16 +4,23 @@ import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
 import "./components/Navbar/Navbar.css";
 import { useRef, useEffect, useState } from "react";
+import Contact from "./components/Contact/Contact";
 
 function App() {
 	const skills = useRef();
 	const header = useRef();
 	const projects = useRef();
+	const contact = useRef();
+	const [contactFormActive, setContactFormActive] = useState(false);
 	const handleScroll = ref => {
 		ref.current.scrollIntoView({ behavior: "smooth", block: "end" });
 	};
 	const [scrollY, setScrollY] = useState(0);
-
+	function formToggle(e) {
+		if (e.target.className === "contact_wrapper") {
+			setContactFormActive(!contactFormActive);
+		}
+	}
 	function logit() {
 		setScrollY((window.pageYOffset * 1080) / window.innerHeight);
 	}
@@ -22,13 +29,21 @@ function App() {
 			window.addEventListener("scroll", logit);
 		}
 		watchScroll();
-		console.log(scrollY);
 		return () => {
 			window.removeEventListener("scroll", logit);
 		};
 	});
 	return (
-		<div className="App">
+		<div ref={contact} onClick={formToggle} className="App">
+			<div
+				className={
+					contactFormActive ? "contact_wrapper" : "contact_wrapper_disabled"
+				}
+			>
+				<div>
+					<Contact />
+				</div>
+			</div>
 			<nav className="navbar">
 				<div className="links_wrapper">
 					<button
@@ -55,7 +70,14 @@ function App() {
 					>
 						Projects
 					</button>
-					<button className="link">Contact</button>
+					<button
+						onClick={() => {
+							setContactFormActive(!contactFormActive);
+						}}
+						className="link"
+					>
+						Contact
+					</button>
 				</div>
 			</nav>
 			<div ref={header}>

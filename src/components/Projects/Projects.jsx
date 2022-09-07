@@ -8,31 +8,31 @@ export default function Projects() {
 	const mainProjects = [
 		{
 			name: "Dungeons and Coders",
-			url: "Rol game platform made in Angular",
+			url: "https://github.com/PascualVera/dungeonsAndCoders",
 			img: dungeon,
 			description: "Rol game platform made in Angular and MySQL",
 		},
 		{
 			name: "Alejandria",
-			url: "",
+			url: "https://github.com/PascualVera/angular",
 			img: books,
 			description: "E-Commerce built with Angular and MySQL",
 		},
 		{
 			name: "Movies Database",
-			url: "diceselo",
+			url: "https://github.com/PascualVera/mongo/tree/main/imdbMongo",
 			img: movies,
 			description: "Movie Database built with JS, HTML, CSS and MongoDB",
 		},
 		{
 			name: "PS5 scrapper",
-			url: "diceselo",
+			url: "https://github.com/PascualVera/ps5scrapper",
 			img: ps5,
 			description: "Node scrap app for finding avaiable PS5",
 		},
 		{
 			name: "Portfolio",
-			url: "diceselo",
+			url: "https://github.com/PascualVera/portfolio",
 			img: portfolio,
 			description: "Personal portfolio built with ReactJS",
 		},
@@ -45,7 +45,7 @@ export default function Projects() {
 			<div className="projects_wrapper">
 				{mainProjects.map(({ name, url, img, description }) => {
 					return (
-						<a href={url} className="project_item">
+						<a href={url} target="_blank" className="project_item">
 							<figure className="project_image_wrapper">
 								<img src={img} alt={name} />
 							</figure>

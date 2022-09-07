@@ -7,7 +7,6 @@
 	grid-template-rows: repeat(25, 1fr);
 	z-index: -1;
 	position: absolute;
-	top: -40px;
 }
 .alive {
 	width: 100%;

@@ -63,6 +63,7 @@
 	background-color: black;
 	text-align: center;
 	padding: 0.5vw;
+	font-size: 1.3vw;
 }
 .project_description_wrapper a:hover {
 	color: var(--highlightgreen);
