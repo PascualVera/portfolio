@@ -14,23 +14,24 @@
 	font-weight: bold;
 }
 
-.link {
+.nav_link {
 	padding: 1vw;
 	color: whitesmoke;
 	background: none;
-	font-size: 1.2vw;
+	font-size: 1vw;
 	letter-spacing: 0.05vw;
 	cursor: pointer;
 	border: none;
 	font-weight: bold;
 	border-radius: 0;
+	height: 100%;
 }
-.link_active {
+.nav_link_active {
 	border-radius: 0;
 	padding: 1vw;
 	color: black;
 	background-color: var(--highlightgreen);
-	font-size: 1.2vw;
+	font-size: 1vw;
 	letter-spacing: 0.05vw;
 	cursor: pointer;
 	border: none;

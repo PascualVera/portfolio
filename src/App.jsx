@@ -47,7 +47,7 @@ function App() {
 			<nav className="navbar">
 				<div className="links_wrapper">
 					<button
-						className={scrollY < 700 ? "link_active" : "link"}
+						className={scrollY < 700 ? "nav_link_active" : "nav_link"}
 						onClick={() => {
 							handleScroll(header);
 						}}
@@ -55,7 +55,9 @@ function App() {
 						Home
 					</button>
 					<button
-						className={scrollY > 700 && scrollY < 1400 ? "link_active" : "link"}
+						className={
+							scrollY > 700 && scrollY < 1400 ? "nav_link_active" : "nav_link"
+						}
 						onClick={() => {
 							handleScroll(skills);
 						}}
@@ -63,7 +65,7 @@ function App() {
 						IT Skills
 					</button>
 					<button
-						className={scrollY > 1400 ? "link_active" : "link"}
+						className={scrollY > 1400 ? "nav_link_active" : "nav_link"}
 						onClick={() => {
 							handleScroll(projects);
 						}}
@@ -74,7 +76,7 @@ function App() {
 						onClick={() => {
 							setContactFormActive(!contactFormActive);
 						}}
-						className="link"
+						className="nav_link"
 					>
 						Contact
 					</button>
