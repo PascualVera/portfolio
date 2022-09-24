@@ -32,6 +32,7 @@ svg {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	transition: all 0.5s;
 }
 .contact_wrapper_disabled {
 	display: none;

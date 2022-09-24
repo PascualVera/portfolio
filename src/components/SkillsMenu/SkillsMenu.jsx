@@ -160,7 +160,7 @@ export default function SkillMenu() {
 				{logos.map(e => {
 					return (
 						<div
-							onClick={() => {
+							onMouseEnter={() => {
 								setCurrentIcon(e.name);
 							}}
 							key={e.name}
