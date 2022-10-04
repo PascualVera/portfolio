@@ -37,6 +37,11 @@ export default function Conway() {
 	//******************//
 
 	const [grid, setGrid] = useState(schema);
+	const hoverEffect = (i, k) => {
+		let arr = grid;
+		arr[i][k] = 1;
+		setGrid([...arr]);
+	};
 
 	useEffect(() => {
 		const cols = schema[0].length;
@@ -75,7 +80,6 @@ export default function Conway() {
 				return next;
 			});
 		}, 2000);
-
 		return () => clearInterval(interval);
 	});
 
@@ -84,7 +88,13 @@ export default function Conway() {
 			{grid &&
 				grid.map((rows, i) =>
 					rows.map((_cols, k) => (
-						<div className={grid[i][k] ? "dead" : "alive"} />
+						<div
+							value={grid[i][k]}
+							onMouseEnter={() => {
+								hoverEffect(i, k);
+							}}
+							className={grid[i][k] ? "dead" : "alive"}
+						/>
 					))
 				)}
 		</div>

@@ -22,9 +22,9 @@ export default function Header() {
 				</div>
 				<p className="about"></p>
 			</div>
-			<div className="latest_proyect_wrapper">
+			{/* <div className="latest_proyect_wrapper">
 				<LatestProject />
-			</div>
+			</div> */}
 		</header>
 	);
 }
