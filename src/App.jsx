@@ -5,6 +5,7 @@ import Skills from "./components/Skills/Skills";
 import "./components/Navbar/Navbar.css";
 import { useRef, useEffect, useState } from "react";
 import Contact from "./components/Contact/Contact";
+import Conway from "./components/Conway/Conway";
 
 function App() {
 	const skills = useRef();
@@ -91,6 +92,7 @@ function App() {
 			<div ref={projects}>
 				<Projects />
 			</div>
+			<Conway />
 		</div>
 	);
 }

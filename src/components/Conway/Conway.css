@@ -1,3 +1,11 @@
+.conway_wrapper {
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+	z-index: -1;
+	position: fixed;
+	top: 0;
+}
 .conway {
 	width: 100vw;
 	height: 100vw;
@@ -5,8 +13,6 @@
 	display: grid;
 	grid-template-columns: repeat(25, 1fr);
 	grid-template-rows: repeat(25, 1fr);
-	z-index: 0;
-	position: absolute;
 }
 .alive {
 	width: 100%;

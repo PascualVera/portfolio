@@ -1,5 +1,6 @@
 .skills_wrapper {
 	height: 92vh;
+	width: 95vw;
 	background-color: var(--darkgreen);
 	display: flex;
 	flex-direction: row;

@@ -84,19 +84,21 @@ export default function Conway() {
 	});
 
 	return (
-		<div className="conway">
-			{grid &&
-				grid.map((rows, i) =>
-					rows.map((_cols, k) => (
-						<div
-							value={grid[i][k]}
-							onMouseEnter={() => {
-								hoverEffect(i, k);
-							}}
-							className={grid[i][k] ? "dead" : "alive"}
-						/>
-					))
-				)}
+		<div className="conway_wrapper">
+			<div className="conway">
+				{grid &&
+					grid.map((rows, i) =>
+						rows.map((_cols, k) => (
+							<div
+								value={grid[i][k]}
+								onMouseEnter={() => {
+									hoverEffect(i, k);
+								}}
+								className={grid[i][k] ? "dead" : "alive"}
+							/>
+						))
+					)}
+			</div>
 		</div>
 	);
 }
