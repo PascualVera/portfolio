@@ -38,6 +38,5 @@
 
 .face_alive {
     background: var(--green);
-    box-shadow: 0px 0px 4px 0px var(--highlightgreen);
 }
 
