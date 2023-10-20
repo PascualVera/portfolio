@@ -2,16 +2,12 @@
 
 :root {
 	/*Colors*/
-	--darkgreen: #1e1e1e;
+	--dark: #1e1e1e;
 	--greygreen: #536869;
-	--bluegreen: #1e1e1e;
 	--highlightgreen: #8eaa90;
 	--green: #738c7f;
 	/*Fonts*/
 	--primary-font: "Roboto Slab", serif;
-}
-svg {
-	color: aliceblue;
 }
 * {
 	box-sizing: border-box;
@@ -23,21 +19,26 @@ svg {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: relative;
-}
-.contact_wrapper {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: 2;
-	display: flex;
 	justify-content: center;
+	gap: 40px;
+}
+.section_wrapper{
+	display: flex;
+	justify-content: flex-end;
 	align-items: center;
-	transition: all 0.5s;
+	justify-content: center;
+	flex-direction: row;
+	height: 80vh;
+	width: 80vw;
 }
-.contact_wrapper_disabled {
-	display: none;
+.title_wrapper{
+	height: 40vh;
+	width: 30vw;
 }
+body{
+	background-color: var(--dark);
+}
+
 ::-webkit-scrollbar {
 	width: 15px;
 }
@@ -49,9 +50,9 @@ svg {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-	background: var(--darkgreen);
+	background: var(--greygreen);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: var(--greygreen);
+	background: var(--green);
 }

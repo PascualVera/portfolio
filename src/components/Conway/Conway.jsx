@@ -1,104 +1,34 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import "./Conway.css";
+import Cell from '../Cell/Cell';
+import calculateGameOfLife from '../../utils/conway';
 
-export default function Conway() {
-	//******************//
-	//CONWAY SCHEMA//
-	const schema = [
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
-		[0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-		[0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0],
-		[0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0],
-		[0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
-		[0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-		[0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-		[0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0],
-		[0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-		[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-	];
-	//******************//
-	//******************//
+export default function Conway({ schema, isRunning }) {
+  const [grid, setGrid] = useState(schema);
+  const runGameOfLife = () => {
+    const interval = setInterval(() => {
+      setGrid((prevState) => calculateGameOfLife(prevState));
+    }, 2000);
+    return () => clearInterval(interval);
+  };
+  useEffect(() => {
+    if (isRunning) {
+      runGameOfLife();
+    }
+  }, []);
 
-	const [grid, setGrid] = useState(schema);
-	const hoverEffect = (i, k) => {
-		let arr = grid;
-		arr[i][k] = 1;
-		setGrid([...arr]);
-	};
-
-	useEffect(() => {
-		const cols = schema[0].length;
-		const rows = schema.length;
-		const positions = [
-			[0, 1],
-			[0, -1],
-			[1, -1],
-			[-1, 1],
-			[1, 1],
-			[-1, -1],
-			[1, 0],
-			[-1, 0],
-		];
-		const interval = setInterval(() => {
-			setGrid(g => {
-				const next = g.map((row, i) => {
-					return row.map((_cell, j) => {
-						let sum = 0;
-						positions.forEach(position => {
-							const x = i + position[0];
-							const y = j + position[1];
-							if (x >= 0 && x < rows && y >= 0 && y < cols) {
-								sum += g[x][y];
-							}
-						});
-						if (sum < 2 || sum > 3) {
-							return 0;
-						}
-						if (sum === 3) {
-							return 1;
-						}
-						return g[i][j];
-					});
-				});
-				return next;
-			});
-		}, 2000);
-		return () => clearInterval(interval);
-	});
-
-	return (
-		<div className="conway_wrapper">
-			<div className="conway">
-				{grid &&
-					grid.map((rows, i) =>
-						rows.map((_cols, k) => (
-							<div
-								value={grid[i][k]}
-								onMouseEnter={() => {
-									hoverEffect(i, k);
-								}}
-								className={grid[i][k] ? "dead" : "alive"}
-							/>
-						))
-					)}
-			</div>
-		</div>
-	);
+  const gridStyle = {
+    width: 'inherit',
+    height: 'inherit',
+    display: 'grid',
+    gridTemplateColumns: `repeat(${schema[0].length}, 1fr)`,
+    gridTemplateRows: `'repeat(${schema.length}, 1fr)'`,
+  };
+  return (
+    <div style={gridStyle}>
+      {grid && grid.map((rows, i) => rows.map((_cols, k) => (
+        <Cell state={grid[i][k]} />
+      )))}
+    </div>
+  );
 }

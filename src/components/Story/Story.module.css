@@ -1,0 +1,21 @@
+.container{
+    display: flex;
+    height: 80vh;
+    width: 80vw;
+}
+.cell_wrapper{
+    object-fit: contain;
+}
+.title_wrapper{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    gap: 60px;
+
+}
+.title{
+    font-size: 33px;
+    color: aliceblue; 
+}

@@ -1,0 +1,8 @@
+
+.conway {
+	background: var(--darkgreen);
+	display: grid;
+	grid-template-columns: repeat(15, 1fr);
+	grid-template-rows: repeat(auto-fill, 1fr);
+}
+
