@@ -17,3 +17,6 @@
     letter-spacing: 0.2vw;
     color: aliceblue; 
 }
+.cell_style{
+    scale: 0.5;
+}

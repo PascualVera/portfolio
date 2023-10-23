@@ -2,14 +2,15 @@
 .cell {
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateX(-45deg) rotateY(45deg);;
+    transform: rotateX(-45deg) rotateY(45deg);
+    
 }
   
 .cell_face {
     position: absolute;
     width: 2vw;
     height: 2vw;
-    transition: all 1s;
+    border-radius: 10%;
 
 }
 
@@ -31,8 +32,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 2vw;
-    height: 2vw;
     transform: rotateX(90deg) translateZ(1vw);
     filter: brightness(1.4);
 }
@@ -41,6 +40,6 @@
  }
 
 .face_alive {
-    background: #434243;
+    background: var(--dark);
 }
 

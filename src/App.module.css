@@ -26,17 +26,16 @@
 
 .section_wrapper{
 	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	flex-direction: row-reverse;
-	height: 60vh;
+	height: 70vh;
 	width: 100vw;
+	position: relative;
 	background: rgb(203,202,202);
     background: linear-gradient(310deg,
-	 rgba(197,197,196,1) 40%,
-	 rgba(169,168,168,1) 50%,
-	 rgba(169,168,168,1) 70%,
-	 rgba(67,66,67,1) 85%);
+	var(--green)60%,
+	var(--greygreen)70%,
+	var(--dark)85%);
+	overflow: hidden;
+
 }
 .img_container{
 	height: 100%;
@@ -52,9 +51,14 @@
 	
 }
 .conway_container{
-	width: 60vw;
-	height: 25vh;
+	width: 40vw;
+	height: 40vh;
+	position: absolute;
+	top: 5vw;
+	right: 20vw;
 }
+
+
 body{
 	background-color: var(--dark);
 }

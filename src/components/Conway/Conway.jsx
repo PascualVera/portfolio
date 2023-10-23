@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import Cell from '../Cell/Cell';
-import calculateGameOfLife from '../../utils/conway';
+import { calculateGameOfLife, randomice } from '../../utils/conway';
 
-export default function Conway({ schema, isRunning }) {
+export default function Conway({ schema, runningMode = null }) {
   const [grid, setGrid] = useState(schema);
   const runGameOfLife = () => {
     const interval = setInterval(() => {
@@ -11,9 +11,18 @@ export default function Conway({ schema, isRunning }) {
     }, 2000);
     return () => clearInterval(interval);
   };
+  const runRandom = () => {
+    const interval = setInterval(() => {
+      setGrid((prevState) => randomice(prevState));
+    }, 1000);
+    return () => clearInterval(interval);
+  };
   useEffect(() => {
-    if (isRunning) {
+    if (runningMode === 'conway') {
       runGameOfLife();
+    }
+    if (runningMode === 'iterate') {
+      runRandom();
     }
   }, []);
 
