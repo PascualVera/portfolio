@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
 
 :root {
 	/*Colors*/
@@ -9,12 +10,12 @@
 	--grey:#434243;
 	/*Fonts*/
 	--primary-font: "Roboto Slab", serif;
+	--title-font: 'Nova Square', sans-serif;
 }
 * {
 	box-sizing: border-box;
 	padding: 0;
 	margin: 0;
-	font-family: var(--primary-font);
 }
 .App {
 	display: flex;
@@ -28,6 +29,7 @@
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: flex-end;
+	align-items: center;
 	height: 70vh;
 	width: 100vw;
 	position: relative;
@@ -47,8 +49,14 @@
     transform: scaleX(-1)
 }
 .conway_container{
-	height: 100%;
-	width: 50vw;
+	height: 70vh;
+	width: 70vh;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 .backdrop{
 	position: absolute;
@@ -56,8 +64,48 @@
 	height: 100%;
 	backdrop-filter: blur(1px);
 }
-
-
+.title_container{
+	z-index: 1;
+	color: white;
+	height: max-content;
+	font-family: var(--title-font);
+	font-size: 2.5vw;
+}
+.title_container h1{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	width: 20vw;
+	text-align: end;
+	
+}
+.title_container h1 span{
+	text-align: end;
+	width: 100%;
+	
+}
+.title_surname{
+	width: 100%;
+	overflow: hidden;
+	letter-spacing: 0.2vw;
+}
+.title_surname span:first-child{
+	animation: gradient 15s ease-in infinite;
+	background: linear-gradient(-45deg, #1832fc, #d0ddf1);
+	-webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+	position: relative;
+	width: 100%;
+}
+.title_surname span:first-child::after{
+	content: 'VE';
+	position: absolute;
+	right: 0;
+	top:0;
+	z-index: -1;
+	background: #fcffff;
+	width: 100vw;
+}
 body{
 	background: #fcffff
 }
