@@ -8,7 +8,7 @@ export default function Conway({ schema, runningMode = null }) {
   const runGameOfLife = () => {
     const interval = setInterval(() => {
       setGrid((prevState) => calculateGameOfLife(prevState));
-    }, 2000);
+    }, 10000);
     return () => clearInterval(interval);
   };
   const runRandom = () => {
