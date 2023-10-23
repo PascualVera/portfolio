@@ -2,12 +2,16 @@
     display: flex;
     height: 80vh;
     width: 80vw;
-    margin-top: 10vh;
+}
+.cell_wrapper{
+    object-fit: contain;
 }
 .title_wrapper{
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     flex-direction: row;
+    width: 100%;
     gap: 3vw;
     height: 10vh;
 
