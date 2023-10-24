@@ -11,21 +11,9 @@ function App() {
         <div className={style.conway_container}>
           <Conway schema={schema} runningMode="conway" />
         </div>
-        {/* <div className={style.title_container}>
-          <h1>
-            PASCUAL
-            <span className={style.title_surname}>
-              <span>VE</span>
-              <span>RA</span>
-            </span>
-          </h1>
-
-        </div> */}
-
         <h1 className={style.title} title="Pascual Vera">
           <img src={title} alt="title" />
         </h1>
-
         <div className={style.backdrop} />
         <picture className={style.img_container}>
           <img src={meVectoriced} alt="me posing for inkscape" />
