@@ -1,6 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
 :root {
 	/*Colors*/
 	--dark: #1e1e1e;
@@ -10,7 +8,7 @@
 	--grey:#434243;
 	/*Fonts*/
 	--primary-font: "Roboto Slab", serif;
-	--title-font: 'Nova Square', sans-serif;
+	--title-font: 'Inconsolata', 'monospace';
 }
 * {
 	box-sizing: border-box;
@@ -27,8 +25,7 @@
 
 .section_wrapper{
 	display: flex;
-	flex-direction: row-reverse;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 	height: 70vh;
 	width: 100vw;
@@ -39,6 +36,9 @@
 
 }
 .img_container{
+	position: absolute;
+	left: 0;
+	bottom: 0;
 	height: 100%;
 	width: auto;
 }
@@ -69,42 +69,49 @@
 	color: white;
 	height: max-content;
 	font-family: var(--title-font);
-	font-size: 2.5vw;
+	font-size: 2vw;
 }
 .title_container h1{
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	width: 20vw;
 	text-align: end;
-	
 }
-.title_container h1 span{
-	text-align: end;
+.title{
+	z-index: 1;
+	width: 20vw;
+}
+.title img{
 	width: 100%;
-	
+	height: auto;
 }
 .title_surname{
 	width: 100%;
-	overflow: hidden;
-	letter-spacing: 0.2vw;
+	display: flex;
 }
 .title_surname span:first-child{
 	animation: gradient 15s ease-in infinite;
 	background: linear-gradient(-45deg, #1832fc, #d0ddf1);
 	-webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+	background-size: 200% 200%;
 	position: relative;
 	width: 100%;
+	font-weight: bold;
+	height: 70%;
 }
 .title_surname span:first-child::after{
 	content: 'VE';
 	position: absolute;
 	right: 0;
-	top:0;
+	top:0.6vw;
+	background-image:url('./assets/Solid_white.svg');
+	background-size: cover;
+	background-position: top;
+	clip-path: polygon(0 0, 100% 0, 100% 50%, 100% 100%, 10% 100%, 0 80%);
 	z-index: -1;
-	background: #fcffff;
-	width: 100vw;
+	width: 100%;
+	line-height: 0.8;
 }
 body{
 	background: #fcffff
