@@ -30,7 +30,20 @@
 	height: 70vh;
 	width: 100vw;
 	position: relative;
-	background: linear-gradient(-45deg, #01062a, #1832fc, #d0ddf1);
+	background-image: linear-gradient(to right top,
+	#01062a,
+	#00164f,
+	#002075,
+	#00289e,
+	#002ec6, 
+	#1b33d6, 
+	#2c37e5, 
+	#3b3cf5, 
+	#4a43f0, 
+	#564aea, 
+	#6051e5, 
+	#6858df
+	);
 	background-size: 400% 400%;
 	animation: gradient 15s ease-in infinite;
 
@@ -68,9 +81,15 @@
 	z-index: 1;
 	width: 20vw;
 }
-.title img{
+.title h1 img{
 	width: 100%;
 	height: auto;
+}
+.title h2{
+	color: #fcffff;
+	font-size: 1.2vw;
+	font-family: "Cascadia Mono";
+	text-align: right;
 }
 
 body{

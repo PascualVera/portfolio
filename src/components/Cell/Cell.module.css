@@ -3,6 +3,7 @@
     position: relative;
     transform-style: preserve-3d;
     transform: rotateX(-45deg) rotateY(45deg);
+    border-radius: 10%;
     
 }
   
@@ -12,7 +13,7 @@
     height: 2vw;
     border-radius: 10%;
     transition: all 0.5s;
-    border-radius: 100%;
+
 }
 
 .cell_face_front { 
@@ -42,6 +43,5 @@
 
 .face_alive {
     background:#6858df;
-    box-shadow: 0px 0px 10px 0px #6858df;
 }
 
