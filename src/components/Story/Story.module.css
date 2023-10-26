@@ -12,23 +12,16 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    top:-5vh;
-    left: -1vw;
+    top: 0;
+    right: 50%;
+    width: max-content;
 
 }
-.title{
-    color: rgb(82, 175, 252);
-    font-size: 1.5vw;
-    background-color: rgb(0, 67, 155);
-    padding: 0vw 1vw 0vw 1vw;
-}
-.title:first-child{
-    color: white;
-}
+
 .projects_content{
     position: relative;
-    width: 70vw;
+    width: 90vw;
     height: 70vh;
-    background-color: #fcffff;
-    border: 1vw solid rgb(0, 67, 155);
+    background-color:#a1d9ff;
+    
 }
