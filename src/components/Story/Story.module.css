@@ -1,8 +1,11 @@
 .container{
     display: flex;
     height: 80vh;
-    width: 80vw;
-    margin-top: 10vh;
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    
+    
 }
 .title_wrapper{
     display: flex;
@@ -16,7 +19,4 @@
     font-size: 2vw;
     letter-spacing: 0.2vw;
     color: aliceblue; 
-}
-.cell_style{
-    scale: 0.5;
 }

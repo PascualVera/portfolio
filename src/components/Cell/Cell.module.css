@@ -2,26 +2,23 @@
 .cell {
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateX(-45deg) rotateY(45deg);
-    border-radius: 10%;
-    
+    transform: rotateX(-20deg) rotateY(45deg) ;
 }
   
 .cell_face {
     position: absolute;
     width: 2vw;
     height: 2vw;
-    border-radius: 10%;
-    transition: all 0.5s;
-
+    transition: all 0.3s ease;
 }
 
 .cell_face_front { 
     transform: rotateY(0deg) translateZ(1vw); 
-    filter: brightness(1.2);
+    filter: brightness(0.9);
 }
 .cell_face_right { 
     transform: rotateY(90deg) translateZ(1vw);
+    
     
 }
 .cell_face_back { 
@@ -29,19 +26,38 @@
 }
 .cell_face_left { 
     transform: rotateY(-90deg) translateZ(1vw); 
+    filter: brightness(1.2);
 }
 .cell_face_top { 
     position: absolute;
     top: 0;
     left: 0;
     transform: rotateX(90deg) translateZ(1vw);
-    filter: brightness(1.4);
+    filter: brightness(1.1);
 }
 .cell_face_bottom {
     transform: rotateX(-90deg) translateZ(1vw);
  }
 
 .face_alive {
-    background:#6858df;
+    background:#14c3fc;
+}
+.cell_alive {
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(45deg) ;
+    animation: bounce 2s ease-in infinite;
 }
 
+
+@keyframes bounce {
+	0% {
+		transform: rotateX(-20deg) rotateY(45deg) translateY(0vw);
+	}
+	50% {
+		transform: rotateX(-20deg) rotateY(45deg) translateY(0.1vw);
+	}
+	100% {
+		transform: rotateX(-20deg) rotateY(45deg) translateY(0vw);
+	}
+}

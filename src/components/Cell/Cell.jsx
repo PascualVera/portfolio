@@ -6,7 +6,7 @@ export default function Cell({ state, color }) {
   };
 
   return (
-    <div className={`${style.cell}`}>
+    <div id="cell" className={`${state ? style.cell_alive : style.cell}`}>
       <div style={cellColor} className={`${style.cell_face} ${style.cell_face_front}  ${state ? style.face_alive : null}`} />
       <div style={cellColor} className={`${style.cell_face} ${style.cell_face_right}   ${state ? style.face_alive : null}`} />
       <div style={cellColor} className={`${style.cell_face} ${style.cell_face_left}   ${state ? style.face_alive : null}`} />

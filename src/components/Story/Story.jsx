@@ -6,6 +6,7 @@ export default function Story() {
       <div className={style.title_wrapper}>
         <h2 className={style.title}>Story</h2>
       </div>
+
     </section>
   );
 }
