@@ -1,28 +1,20 @@
 import style from './Cell.module.css';
 
-export default function Cell({ state, color, content }) {
-  const cellColor = {
-    backgroundColor: `${color}`,
-  };
-  const cellFace = {
-    position: 'absolute',
-    width: '2vw',
-    height: '2vw',
-    transition: 'all 0.3s ease',
-  };
+import { cellCreation, rotateCell } from '../../utils/cellController';
 
+export default function Cell({
+  state, color = '#14c3fc', content, cellWidth = 2, cellHeight = 2,
+}) {
   return (
-    <div id="cell" className={`${state ? style.cell_alive : style.cell}`}>
-      <div style={cellColor} className={`${cellFace} ${style.cell_face_front}  ${state ? style.face_alive : null}`}>
-        {' '}
-        {content}
-        {' '}
+    <div id="cell" style={rotateCell(-15, -15)}>
+      <div style={cellCreation('0', 'Y', cellWidth, cellHeight, color, state)} className={style.cell_face_front}>
+        {content ?? content}
       </div>
-      <div style={cellColor} className={`${style.cell_face} ${style.cell_face_right}   ${state ? style.face_alive : null}`} />
-      <div style={cellColor} className={`${style.cell_face} ${style.cell_face_left}   ${state ? style.face_alive : null}`} />
-      <div style={cellColor} className={`${style.cell_face} ${style.cell_face_top}   ${state ? style.face_alive : null}`} />
-      <div style={cellColor} className={`${style.cell_face} ${style.cell_face_back}   ${state ? style.face_alive : null}`} />
-      <div style={cellColor} className={`${style.cell_face} ${style.cell_face_bottom}   ${state ? style.face_alive : null}`} />
+      <div id="right" style={cellCreation('-90', 'Y', cellWidth, cellHeight, color, state)} className={style.cell_face_right} />
+      <div id="left" style={cellCreation('90', 'Y', cellWidth, cellHeight, color, state)} className={style.cell_face_left} />
+      <div id="top" style={cellCreation('90', 'X', cellWidth, cellHeight, color, state)} className={style.cell_face_top} />
+      <div id="back" style={cellCreation('180', 'Y', cellWidth, cellHeight, color, state)} className={style.cell_face_back} />
+      <div id="bottom" style={cellCreation('-90', 'X', cellWidth, cellHeight, color, state)} className={style.cell_face_bottom} />
     </div>
   );
 }

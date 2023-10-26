@@ -8,9 +8,15 @@ export default function Navbar() {
         <img src={title} alt="logo" />
       </picture>
       <ul>
-        <li><a href="experience">Projects</a></li>
-        <li><a href="experience">About</a></li>
-        <li><a href="experience">Contact</a></li>
+        <li>
+          <a href="experience">Projects</a>
+        </li>
+        <li>
+          <a href="experience">About</a>
+        </li>
+        <li>
+          <a href="experience">Contact</a>
+        </li>
       </ul>
     </nav>
   );

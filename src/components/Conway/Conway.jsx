@@ -3,7 +3,9 @@ import { useEffect, useState } from 'react';
 import Cell from '../Cell/Cell';
 import { calculateGameOfLife, randomice } from '../../utils/conway';
 
-export default function Conway({ schema, runningMode = null }) {
+export default function Conway({
+  schema, runningMode = null, isStringSchema, cellSize,
+}) {
   const [grid, setGrid] = useState(schema);
   const runGameOfLife = () => {
     const interval = setInterval(() => {
@@ -36,7 +38,12 @@ export default function Conway({ schema, runningMode = null }) {
   return (
     <div style={gridStyle}>
       {grid && grid.map((rows, i) => rows.map((_cols, k) => (
-        <Cell state={grid[i][k]} />
+        <Cell
+          state={grid[i][k]}
+          cellHeight={cellSize}
+          cellWidth={cellSize}
+          content={isStringSchema ? grid[i][k] : null}
+        />
       )))}
     </div>
   );

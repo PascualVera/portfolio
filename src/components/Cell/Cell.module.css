@@ -2,7 +2,7 @@
 .cell {
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateX(-20deg) rotateY(45deg) ;
+    transform: rotateX(-20deg) rotateY(-45deg) ;
 }
   
 .cell_face {
@@ -13,25 +13,25 @@
 }
 
 .cell_face_front { 
-    transform: rotateY(0deg) translateZ(1vw); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: brightness(1.3);
+    font: bold 2vw arial, sans-serif;
+    color: #15d3fe13;
+    text-shadow: 1px 1px 2px #009ac1 inset;
+    -webkit-background-clip: text;
+       -moz-background-clip: text;
+            background-clip: text;
+}
+
+
+.cell_face_left { 
+
     filter: brightness(0.9);
 }
-.cell_face_right { 
-    transform: rotateY(90deg) translateZ(1vw);
-    
-    
-}
-.cell_face_back { 
-    transform: rotateY(180deg) translateZ(1vw); 
-}
-.cell_face_left { 
-    transform: rotateY(-90deg) translateZ(1vw); 
-    filter: brightness(1.2);
-}
 .cell_face_top { 
-    top: 0;
-    left: 0;
-    transform: rotateX(90deg) translateZ(1vw);
+
     filter: brightness(1.1);
 }
 .cell_face_bottom {
@@ -45,8 +45,8 @@
 .cell_alive {
     position: relative;
     transform-style: preserve-3d;
-    transform: rotateX(-20deg) rotateY(45deg) ;
-    animation: bounce 2s ease-in infinite;
+    transform: rotateX(-20deg) rotateY(-45deg) ;
+  
 }
 
 

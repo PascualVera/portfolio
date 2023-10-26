@@ -5,8 +5,8 @@ function generateBinaryMatrix(rows, columns) {
     const row = [];
 
     for (let j = 0; j < columns; j += 1) {
-      const randomValue = Math.random(); // Generates a random value between 0 and 1
-      const binaryValue = Math.round(randomValue); // Rounds to the nearest integer (0 or 1)
+      const randomValue = Math.random();
+      const binaryValue = Math.round(randomValue);
       row.push(binaryValue);
     }
 
@@ -51,7 +51,6 @@ const calculateGameOfLife = (schema) => {
 };
 
 const iterateRun = (schema) => {
-  // Create a deep copy of the input schema
   const tempSchema = schema.map((row) => [...row]);
   if (tempSchema[tempSchema.length - 1][tempSchema[tempSchema.length - 1].length - 1] === 0) {
     for (let i = 0; i < tempSchema.length; i += 1) {
@@ -74,10 +73,20 @@ const iterateRun = (schema) => {
   }
   return schema;
 };
+
+const buildStringOnSchema = (stringToMatrix) => {
+  const matrix = [[]];
+  for (let i = 0; i < stringToMatrix.length; i++) {
+    matrix[0].push(stringToMatrix[i]);
+  }
+  return matrix;
+};
 const randomice = (schema) => {
   const cols = schema[0].length;
   const rows = schema.length;
   return generateBinaryMatrix(rows, cols);
 };
 
-export { calculateGameOfLife, iterateRun, randomice };
+export {
+  calculateGameOfLife, iterateRun, randomice, buildStringOnSchema,
+};
