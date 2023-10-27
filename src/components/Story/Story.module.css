@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -10,15 +11,16 @@
     justify-content: center;
     width: 100vw;
     height: 80vh;
-    background-color:#a1d9ff;
     
 }
 .title_wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    width: 50vw
-
+    height: max-content;
+    width: 40vw;
+}
+.cell_wrapper{
+    position: relative;
+    width: 50vw;
+    height: 50vw;
+    border: 1px solid red;
 }
 

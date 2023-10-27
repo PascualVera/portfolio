@@ -8,7 +8,7 @@ export default function Header() {
   return (
     <header className={style.header}>
       <div className={style.conway_container}>
-        <Conway schema={schema} runningMode="conway" />
+        <Conway schema={schema} runningMode="conway" cellXRotation={-45} cellYRotation={-45} cellSize={2.3} />
       </div>
 
       <div className={style.backdrop} />

@@ -3,10 +3,10 @@ import style from './Cell.module.css';
 import { cellCreation, rotateCell } from '../../utils/cellController';
 
 export default function Cell({
-  state, color = '#14c3fc', content, cellWidth = 2, cellHeight = 2,
+  state, color = '#14c3fc', content, cellWidth = 2, cellHeight = 2, xRotation, yRotation,
 }) {
   return (
-    <div id="cell" style={rotateCell(-15, -15)}>
+    <div id="cell" style={rotateCell(xRotation, yRotation)}>
       <div style={cellCreation('0', 'Y', cellWidth, cellHeight, color, state)} className={style.cell_face_front}>
         {content ?? content}
       </div>
