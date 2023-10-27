@@ -1,10 +1,9 @@
-const cellCreation = (rotationDegrees, rotationAxis, width, height, color, state) => ({
+const cellCreation = (rotationDegrees, rotationAxis, width, height, color) => ({
   position: 'absolute',
   width: `${width}vw`,
   height: `${height}vw`,
   transform: `rotate${rotationAxis}(${rotationDegrees}deg) translateZ(${width / 2}vw)`,
   backgroundColor: `${color}`,
-  visibility: state ? 'visible' : 'hidden',
 
 });
 const rotateCell = (x, y) => ({
@@ -14,4 +13,9 @@ const rotateCell = (x, y) => ({
 
 });
 
-export { cellCreation, rotateCell };
+const cellContentType = {
+  Image: 'Image',
+  String: 'String',
+};
+
+export { cellCreation, rotateCell, cellContentType };

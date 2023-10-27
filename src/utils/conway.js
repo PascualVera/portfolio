@@ -1,6 +1,20 @@
+// Constants
+
+const positions = [
+  [0, 1],
+  [0, -1],
+  [1, -1],
+  [-1, 1],
+  [1, 1],
+  [-1, -1],
+  [1, 0],
+  [-1, 0],
+];
+
+// Functions
+
 function generateBinaryMatrix(rows, columns) {
   const matrix = [];
-
   for (let i = 0; i < rows; i += 1) {
     const row = [];
 
@@ -15,18 +29,6 @@ function generateBinaryMatrix(rows, columns) {
 
   return matrix;
 }
-
-const positions = [
-  [0, 1],
-  [0, -1],
-  [1, -1],
-  [-1, 1],
-  [1, 1],
-  [-1, -1],
-  [1, 0],
-  [-1, 0],
-];
-
 const calculateGameOfLife = (schema) => {
   const cols = schema[0].length;
   const rows = schema.length;
@@ -50,43 +52,20 @@ const calculateGameOfLife = (schema) => {
   return next;
 };
 
-const iterateRun = (schema) => {
-  const tempSchema = schema.map((row) => [...row]);
-  if (tempSchema[tempSchema.length - 1][tempSchema[tempSchema.length - 1].length - 1] === 0) {
-    for (let i = 0; i < tempSchema.length; i += 1) {
-      for (let j = 0; j < tempSchema[i].length; j += 1) {
-        if (tempSchema[i][j] === 0) {
-          tempSchema[i][j] = 1;
-          return [...tempSchema];
-        }
-      }
-    }
-  }
-
-  for (let i = 0; i < tempSchema.length; i += 1) {
-    for (let j = 0; j < tempSchema[i].length; j += 1) {
-      if (tempSchema[i][j] === 1) {
-        tempSchema[i][j] = 0;
-        return [...tempSchema];
-      }
-    }
-  }
-  return schema;
-};
-
-const buildStringOnSchema = (stringToMatrix) => {
-  const matrix = [[]];
-  for (let i = 0; i < stringToMatrix.length; i++) {
-    matrix[0].push(stringToMatrix[i]);
-  }
-  return matrix;
-};
 const randomice = (schema) => {
   const cols = schema[0].length;
   const rows = schema.length;
   return generateBinaryMatrix(rows, cols);
 };
 
+const buildItemOnSchema = (itemToMatrix) => {
+  const matrix = [[]];
+  for (let i = 0; i < itemToMatrix.length; i++) {
+    matrix[0].push(itemToMatrix[i]);
+  }
+  return matrix;
+};
+
 export {
-  calculateGameOfLife, iterateRun, randomice, buildStringOnSchema,
+  calculateGameOfLife, randomice, buildItemOnSchema,
 };

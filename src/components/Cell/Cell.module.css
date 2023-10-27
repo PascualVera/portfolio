@@ -46,8 +46,15 @@
     transform: rotateX(-20deg) rotateY(-45deg) ;
   
 }
+.cell_image{
+    width: 80%;
+    height: auto;
+    filter: invert(99%) sepia(79%) saturate(0%) hue-rotate(253deg) brightness(107%) contrast(100%)
+}
 
-
+.empty_content_or_dead_cell{
+    visibility: hidden;
+}
 @keyframes bounce {
 	0% {
 		transform: rotateX(-20deg) rotateY(45deg) translateY(0vw);
